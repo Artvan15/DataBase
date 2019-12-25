@@ -25,7 +25,9 @@ SOURCES += \
     connecttobd.cpp \
     mainwindow.cpp \
     office.cpp \
-    waybill.cpp
+    skladchosewaybill.cpp \
+    waybill.cpp \
+    waybillsklad.cpp
 
 HEADERS += \
     allwaybills.h \
@@ -36,7 +38,9 @@ HEADERS += \
     deletewaybill.h \
     mainwindow.h \
     office.h \
-    waybill.h
+    skladchosewaybill.h \
+    waybill.h \
+    waybillsklad.h
 
 FORMS += \
     allwaybills.ui \
@@ -46,7 +50,9 @@ FORMS += \
     connecttobd.ui \
     deletewaybill.ui \
     office.ui \
-    waybill.ui
+    skladchosewaybill.ui \
+    waybill.ui \
+    waybillsklad.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

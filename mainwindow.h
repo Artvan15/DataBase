@@ -9,6 +9,8 @@
 #include "chosecompany.h"
 #include "deletewaybill.h"
 #include "waybill.h"
+#include "skladchosewaybill.h"
+#include "waybillsklad.h"
 #include <memory>
 
 class MainWindow : public QObject
@@ -24,6 +26,8 @@ class MainWindow : public QObject
     std::unique_ptr<choseCompany> choseCompanyDialog;
     std::unique_ptr<DeleteWaybill> deleteWaybillDialog;
     std::unique_ptr<waybill> editWaybillDialog;
+    std::unique_ptr<SkladChoseWaybill> skladChoseWaybillDialog;
+    std::unique_ptr<waybillSklad> waybillSkladDialog;
 public:
     explicit MainWindow(QObject *parent = 0);
 
@@ -35,6 +39,8 @@ private slots:
     void showChoseCompanyDialog(QString);
     void showDeleteWaybillDialog(QString);
     void showEditWaybillDialog(QString);
+    void showSkladChoseWaybillDialog();
+    void showWaybillSkladDialog(QString);
 };
 
 #endif // MAINWINODW_H

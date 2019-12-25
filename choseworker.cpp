@@ -34,6 +34,7 @@ void choseWorker::on_comboBox_currentIndexChanged(int index)
 void choseWorker::on_okButton_clicked()
 {
     if(ui->comboBox->currentIndex()){
+        emit okSklad();
         this->accept();
         return;
     }

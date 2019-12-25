@@ -11,6 +11,7 @@ void MainWindow::showWorkerDialog(std::shared_ptr<QSqlDatabase> db){
     database = db;
     workerDialog = std::make_unique<choseWorker>();
     connect(workerDialog.get(), &choseWorker::okOffice, this, &MainWindow::showOfficeDialog);
+    connect(workerDialog.get(), &choseWorker::okSklad, this, &MainWindow::showSkladChoseWaybillDialog);
 }
 void MainWindow::showOfficeDialog(){
     officeDialog = std::make_unique<office>(database);
@@ -38,4 +39,11 @@ void MainWindow::showDeleteWaybillDialog(QString str){
 }
 void MainWindow::showEditWaybillDialog(QString id_waybill){
     editWaybillDialog = std::make_unique<waybill>(database, id_waybill);
+}
+void MainWindow::showSkladChoseWaybillDialog(){
+    skladChoseWaybillDialog = std::make_unique<SkladChoseWaybill>(database);
+    connect(skladChoseWaybillDialog.get(), &SkladChoseWaybill::showWaybillSklad, this, &MainWindow::showWaybillSkladDialog);
+}
+void MainWindow::showWaybillSkladDialog(QString id_waybill){
+    waybillSkladDialog = std::make_unique<waybillSklad>(database, id_waybill);
 }

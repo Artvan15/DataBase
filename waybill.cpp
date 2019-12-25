@@ -95,6 +95,7 @@ void waybill::on_commitButton_3_clicked()
         model->select();
         addRow = false;
     }
+
 }
 
 void waybill::on_revertButton_clicked()

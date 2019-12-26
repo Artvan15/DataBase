@@ -26,6 +26,7 @@ private slots:
 signals:
     void okOffice();
     void okSklad();
+    void okManufacture();
 
 private:
     Ui::choseWorker *ui;

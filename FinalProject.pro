@@ -24,9 +24,12 @@ SOURCES += \
     main.cpp \
     connecttobd.cpp \
     mainwindow.cpp \
+    manufacturechosewaybill.cpp \
+    manufacturecontrol.cpp \
     office.cpp \
     skladchosewaybill.cpp \
     waybill.cpp \
+    waybillmanufacture.cpp \
     waybillsklad.cpp
 
 HEADERS += \
@@ -37,9 +40,12 @@ HEADERS += \
     connecttobd.h \
     deletewaybill.h \
     mainwindow.h \
+    manufacturechosewaybill.h \
+    manufacturecontrol.h \
     office.h \
     skladchosewaybill.h \
     waybill.h \
+    waybillmanufacture.h \
     waybillsklad.h
 
 FORMS += \
@@ -49,9 +55,12 @@ FORMS += \
     companies.ui \
     connecttobd.ui \
     deletewaybill.ui \
+    manufacturechosewaybill.ui \
+    manufacturecontrol.ui \
     office.ui \
     skladchosewaybill.ui \
     waybill.ui \
+    waybillmanufacture.ui \
     waybillsklad.ui
 
 # Default rules for deployment.

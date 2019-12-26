@@ -10,7 +10,7 @@ choseWorker::choseWorker(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("Место работы");
     this->setFixedSize(this->geometry().width(), this->geometry().height());
-    ui->comboBox->addItems(QStringList{"Офис", "Склад"});
+    ui->comboBox->addItems(QStringList{"Офис", "Склад", "Производство"});
     ui->lineEdit->setEchoMode(QLineEdit::Password);
     this->show();
 }
@@ -33,16 +33,20 @@ void choseWorker::on_comboBox_currentIndexChanged(int index)
 
 void choseWorker::on_okButton_clicked()
 {
-    if(ui->comboBox->currentIndex()){
+    if(ui->comboBox->currentIndex() == 1){
         emit okSklad();
+        this->accept();
+        return;
+    }
+    else if(ui->comboBox->currentIndex() == 2){
+        emit okManufacture();
         this->accept();
         return;
     }
     else{
         if(ui->lineEdit->text() == password){
-
-            this->accept();
             emit okOffice();
+            this->accept();
             return;
         }
         else{

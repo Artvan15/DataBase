@@ -16,7 +16,7 @@ waybill::waybill(std::shared_ptr<QSqlDatabase> db, QString id_w,QWidget *parent)
 
     model->setTable("waybill_content");
     model->setFilter(QString("id_waybill = %1").arg(id_waybill));
-    model->removeColumns(0, 1);
+    model->removeColumn(0);
     model->setRelation(model->fieldIndex("id_product"),
                        QSqlRelation("product", "id_product", "name"));
     model->setRelation(model->fieldIndex("id_style"),
